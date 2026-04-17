@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Card Matching Game</title>
+  <title>Game Lật Bài Kamenrider</title>
   <link rel="icon" type="image/png"
     href="https://res.cloudinary.com/dmrdg40kx/image/upload/v1771034619/Logo_urvu0r.png" />
   <link rel="stylesheet" href="style.css" />
@@ -15,49 +15,49 @@
   <div class="wave-bg"></div>
   <div class="falling-container" id="falling-container"></div>
   <div class="main-container" id="menu-screen">
-    <h1 class="game-title">Card Matching Game</h1>
+    <h1 class="game-title">Game Lật Bài Kamenrider</h1>
     <div class="options-frame" id="main-options">
       <button class="btn" id="start-btn" onclick="startGame(1)">Start</button>
       <button class="btn" id="tutorial-btn" onclick="showFrame('tutorial-frame')">
-        Instruction
+        Hướng Dẫn
       </button>
       <button class="btn" id="setting-btn" onclick="showFrame('settings-frame')">
-        Setting
+        Cài Đặt
       </button>
     </div>
     <div class="options-frame" id="level-frame" style="display: none">
-      <h2>Select Level</h2>
+      <h2>Chọn Level</h2>
       <button class="btn" onclick="startGame(1)">Level 1</button>
       <button class="btn" onclick="startGame(2)">Level 2</button>
       <button class="btn" onclick="startGame(3)">Level 3</button>
       <button class="btn back-btn" onclick="showFrame('main-options')">
-        Back
+        Quay Lại
       </button>
     </div>
     <div class="options-frame" id="settings-frame" style="display: none">
-      <h2>Settings</h2>
+      <h2>Cài Đặt</h2>
       <button class="btn" id="topic-btn" onclick="showFrame('topic-frame')">
-        Topic
+        Chủ Đề
       </button>
       <button class="btn" id="music-list-btn" onclick="openPlaylist()">
-        Music
+        Âm Thanh
       </button>
       <button class="btn back-btn" onclick="showFrame('main-options')">
-        Back
+        Quay Lại
       </button>
     </div>
     <div class="options-frame" id="playlist-frame" style="display: none">
-      <h2>Select Song</h2>
+      <h2>Chọn Nhạc</h2>
       <div class="topic-list" id="playlist-container"></div>
       <button class="btn back-btn" onclick="showFrame('settings-frame')">
-        Back
+        Quay Lại
       </button>
     </div>
     <div class="options-frame" id="topic-frame" style="display: none">
-      <h2>Select Topic</h2>
+      <h2>Chọn Chủ Đề</h2>
       <div class="topic-list" id="topic-container"></div>
       <button class="btn back-btn" id="topic-back-btn" onclick="showFrame('settings-frame')">
-        Back
+        Quay Lại
       </button>
     </div>
     <div class="options-frame" id="tutorial-frame" style="display: none">
@@ -73,7 +73,7 @@
         <p>Thua: Hết thời gian hoặc điểm về 0.</p>
         <p>
           Chủ đề: Có thể thay đổi hình ảnh bộ bài trong mục
-          <b>Setting &gt; Topic</b>.
+          <b>Cài Đặt &gt; Chủ Đề</b>.
         </p>
       </div>
       <button class="btn back-btn" onclick="showFrame('main-options')">
@@ -93,7 +93,7 @@
       </div>
 
       <div class="status-item">
-        <span class="status-label">Score:</span>
+        <span class="status-label">Điểm:</span>
         <span class="status-value" id="score-val">100</span>
       </div>
     </div>
@@ -103,7 +103,7 @@
       <div class="game-board" id="game-board"></div>
     </div>
     <button class="btn" id="pause-btn" onclick="pauseGame()" style="margin-top: 20px">
-      Pause Game
+      Dừng Game
     </button>
 
     <div class="countdown-overlay" id="countdown-overlay">
@@ -112,10 +112,10 @@
   </div>
   <div class="modal-overlay" id="pause-modal">
     <div class="modal-content">
-      <h2 class="modal-title">Paused</h2>
+      <h2 class="modal-title">Dừng</h2>
       <div class="modal-buttons">
         <button class="btn" id="pause-music-btn" onclick="toggleMusic()">
-          Music: OFF
+          Âm Thanh: OFF
         </button>
         <button class="btn" onclick="resumeGame()">Continue</button>
         <button class="btn" onclick="restartLevel()">Replay</button>
@@ -128,7 +128,7 @@
       <h2 class="modal-title" id="modal-title">Success</h2>
       <img src="" id="result-topic-logo" alt="topic logo" style="width: 120px; height: auto; margin-bottom: 20px;">
       <p class="modal-score">
-        Final Score: <span id="final-score-val">100</span>
+        Kết Quả: <span id="final-score-val">100</span>
       </p>
       <div class="modal-buttons" id="modal-buttons-container">
         <button class="btn" onclick="restartLevel()">Play Again</button>
@@ -137,7 +137,7 @@
     </div>
   </div>
   <div class="toast" id="toast">
-    <span>Saved Successfully!</span>
+    <span>Đã lưu thành công!</span>
   </div>
 
   <audio id="bg-music">
